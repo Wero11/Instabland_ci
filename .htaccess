@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} "Android|iPhone|iPod"
+RewriteRule ^myapp/(.*) appdesc_mobileBrowser.php?id=$1 [L]
+
+RewriteRule ^myapp/(.*) appdesc.php?id=$1 [L]
+
+RewriteCond $1 !^(index\.php|mail\.php|assets|push_service|mail-parser|appdesc\.php|appdesc_.*\.php|googlea563a95b980de647\.html|favicon\.ico|robots\.txt|sitemap\.xml)
+RewriteRule ^(.*)$ index.php?$1
+
